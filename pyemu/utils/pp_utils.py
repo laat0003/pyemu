@@ -586,6 +586,7 @@ def pilot_points_to_tpl(pp_file, tpl_file=None, name_prefix=None):
     pp_df = pp_df.astype({'zone': int}, errors='ignore')
     if tpl_file is None:
         tpl_file = pp_file + ".tpl"
+    pp_df.loc[:,"tpl_filename"] = tpl_file
 
     if name_prefix is not None:
         if "i" in pp_df.columns and "j" in pp_df.columns:
